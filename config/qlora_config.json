@@ -1,0 +1,29 @@
+{
+  "model_name": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "quantization": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_compute_dtype": "bfloat16"
+  },
+  "lora_config": {
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+    "lora_dropout": 0.05,
+    "bias": "none",
+    "task_type": "CAUSAL_LM"
+  },
+  "vllm_engine_config": {
+    "gpu_memory_utilization": 0.90,
+    "max_num_seqs": 256,
+    "kv_cache_dtype": "fp8",
+    "enable_paged_attention": true,
+    "enable_continuous_batching": true
+  },
+  "metrics": {
+    "vram_reduction_target_pct": 60.0,
+    "min_throughput_gain_factor": 10.0,
+    "max_throughput_gain_factor": 24.0
+  }
+}
