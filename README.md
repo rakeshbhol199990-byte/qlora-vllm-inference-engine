@@ -77,7 +77,13 @@ Visit [http://localhost:8000/docs](http://localhost:8000/docs) to test `/generat
 
 ---
 
+## 🛡️ License & Deployment Notes
+This project is licensed under the MIT License. Designed for production deployment using Docker containers with CUDA GPU acceleration.
+
+---
+
 ## 👤 Author & Architecture Lead
 * **Rakesh Kumar Bhol** — Senior AI Architect & GenAI Engineer
 * LinkedIn: [linkedin.com/in/rakeshbhol](https://linkedin.com/in/rakeshbhol)
 * Email: [rakeshbhol1995@gmail.com](mailto:rakeshbhol1995@gmail.com)
+
