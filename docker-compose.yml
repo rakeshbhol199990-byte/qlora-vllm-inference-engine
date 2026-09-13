@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  qlora-vllm-engine:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_NAME=meta-llama/Meta-Llama-3-8B-Instruct
+      - QUANTIZATION=bitsandbytes
+      - LOAD_FORMAT=bitsandbytes
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
